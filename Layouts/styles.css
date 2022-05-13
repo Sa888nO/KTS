@@ -1,0 +1,115 @@
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+body {
+  margin: 0 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+canvas {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-image: url("./source/cursor.svg");
+}
+
+.content-block {
+  display: -ms-grid;
+  display: grid;
+  gap: 20px;
+  width: 397px;
+  margin: 0 auto;
+  padding: 20px 20px 0 20px;
+}
+
+.search-bar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 357px;
+  height: 50px;
+}
+
+.search-bar .search-bar__input-line {
+  color: #7e7e7e;
+  border: 1px solid #d9d9d9;
+  padding-left: 12px;
+  border-radius: 6px;
+  width: 295px;
+}
+
+.search-bar .search-bar__input-line:focus {
+  border: 1px solid #ff5555;
+  color: #000000;
+}
+
+.search-bar .search-bar__input-line:disabled {
+  color: #7e7e7e;
+  background-color: #f9f9f9;
+}
+
+.search-bar .search-bar__search-button {
+  background-color: #ff5555;
+  background-image: url("./source/loupe.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 6px;
+  width: 50px;
+}
+
+.search-bar .search-bar__search-button:hover {
+  opacity: 70%;
+}
+
+.search-bar .search-bar__search-button:disabled {
+  background-color: #d9d9d9;
+  opacity: 100%;
+}
+
+.repos-list {
+  display: -ms-grid;
+  display: grid;
+  gap: 16px;
+  width: 357px;
+}
+
+.git-repo-tile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  width: 357px;
+  height: 104px;
+  background-color: aliceblue;
+}
