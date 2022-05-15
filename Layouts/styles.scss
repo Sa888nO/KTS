@@ -1,39 +1,21 @@
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("./colors.css");
+input {
   outline: 0;
-  box-shadow: none;
 }
-button,
-input[type="submit"],
-input[type="reset"] {
-  background: none;
-  color: inherit;
+button {
   border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
+  cursor: url("./source/cursor.png"), pointer;
 }
 
 body {
   margin: 0 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-hint);
+  font-size: 14px;
 }
 * {
   box-sizing: border-box;
-}
-canvas {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  background-size: contain;
-  background-image: url("./source/cursor.svg");
 }
 
 .content-block {
@@ -51,22 +33,20 @@ canvas {
   width: 357px;
   height: 50px;
   .search-bar__input-line {
-    color: #7e7e7e;
-    border: 1px solid #d9d9d9;
+    border: 1px solid var(--border-color);
     padding-left: 12px;
     border-radius: 6px;
     width: 295px;
   }
   .search-bar__input-line:focus {
-    border: 1px solid #ff5555;
-    color: #000000;
+    border: 1px solid var(--accent);
+    color: var(--color-text);
   }
   .search-bar__input-line:disabled {
-    color: #7e7e7e;
-    background-color: #f9f9f9;
+    background-color: var(--line-disabled);
   }
   .search-bar__search-button {
-    background-color: #ff5555;
+    background-color: var(--accent);
     background-image: url("./source/loupe.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -77,7 +57,7 @@ canvas {
     opacity: 70%;
   }
   .search-bar__search-button:disabled {
-    background-color: #d9d9d9;
+    background-color: var(--border-color);
     opacity: 100%;
   }
 }
@@ -89,9 +69,65 @@ canvas {
 
 .git-repo-tile {
   display: flex;
-  border: 1px solid #d9d9d9;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid var(--border-color);
   border-radius: 6px;
+  padding: 12px;
   width: 357px;
   height: 104px;
-  background-color: aliceblue;
+  .git-repo-tile__avatar {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-image: url("./source/Avatar.svg");
+  }
+  .git-repo-tile__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5px;
+    width: 241px;
+    height: 59px;
+  }
+  .git-repo-tile__repo-name {
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+  }
+  .git-repo-tile__org-name {
+    line-height: 16px;
+  }
+}
+.git-repo-tile > .git-repo-tile__content > span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.git-repo-tile:hover {
+  cursor: url("./source/cursor.png"), pointer;
+}
+.git-repo-tile__org-name:hover {
+  color: var(--link-hover);
+}
+
+.info {
+  display: flex;
+  gap: 19px;
+  .info__stars {
+    width: 42px;
+    height: 16px;
+    font-size: 14px;
+  }
+  .info__star {
+    display: inline-block;
+    background-image: url("./source/star.svg");
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    vertical-align: -2.3px;
+  }
+  .info__sum-stars {
+    padding-left: 0.9px;
+  }
 }
